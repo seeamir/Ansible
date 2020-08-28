@@ -21,4 +21,4 @@
 - name: Starting the HelloWorld node service
   service:
     name: helloworld
-    start: started   
+    state: restarted   
