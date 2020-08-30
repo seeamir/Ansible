@@ -79,7 +79,7 @@ t.add_resource(Role(
             Statement (
                 Effect=Allow,
                 Action=[AssumeRole],
-                Principal=Principal ("Services", ["ec2.amazonaws.com"])
+                Principal=Principal("Service", ["ec2.amazonaws.com"])
               )
           ]
       )
