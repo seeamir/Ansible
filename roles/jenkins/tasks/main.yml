@@ -4,6 +4,7 @@
   rpm_key:
       state: present
       key: http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+      debugger: on_failed
 - name: Add Jenkins repository
   yum_repository:
       name: jenkins
@@ -11,15 +12,18 @@
       baseurl: http://pkg.jenkins.io/redhat
       enabled: no
       gpgcheck: yes 
+      debugger: on_failed
 - name: Install Jenkins
   yum:
     name: jenkins
     enablerepo: jenkins
     state: present
+    debugger: on_failed
 - name: Start Jenkins
   service: 
     name: jenkins-2.45
     enabled: yes
-    state: started
+    state: restarted
+    debugger: on_failed
 
        
